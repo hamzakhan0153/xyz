@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculations</title>
+</head>
+<body style="text-align: center;">
+    <h1>Javascript Calculator</h1>
+    <p style="font-weight: bold; font-size: 14px;"> operand 1:</p>
+    <input type="number" id="num1">
+    <br>
+    <p style="font-weight: bold; font-size: 14px;"> operand 2:</p>
+    <input type="number" id="num2">
+    <br>
+    <p style="font-weight: bold; font-size: 14px;"> operator :</p>
+    <input type="text" id="operator">
+    <br>
+    <br>
+
+
+    <button onclick=" myfunction()">Calculate</button>
+    <h3 id="result"></h3>
+    <script>
+        function myfunction() {
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+            let operator = document.getElementById("operator").value;
+            console.log(operator)
+            var result;
+            switch (operator) {
+                case '+':
+                    result = Number(num1) + Number(num2);
+                    document.getElementById("result").innerHTML = `Result: ${result}`;
+                    break;
+                case '-':
+                    result = Number(num1) - Number(num2);
+                    document.getElementById("result").innerHTML = `Result: ${result}`;
+                    break;
+                case '*':
+                    result = Number(num1) * Number(num2);
+                    document.getElementById("result").innerHTML = `Result: ${result}`;
+                    break;
+                case '/':
+                    result = Math.round((num1) / Number(num2));
+                    document.getElementById("result").innerHTML = `Result: ${result}`;
+                    break;
+                default:
+                    document.getElementById("result").innerHTML = "Invalid operator"
+                    break;
+            }
+
+            // let result = Number(num1) + Number(num2);
+            // console.log("result: ", result);
+
+        }
+    </script>
+</body>
+</html>
